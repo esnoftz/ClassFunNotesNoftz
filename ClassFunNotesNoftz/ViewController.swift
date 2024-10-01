@@ -43,21 +43,29 @@ class ViewController: UIViewController {
             print(boss.toString())
         }
         
+        
+        var bStruct = Boss2(name: "hi", health: 2.5, power: 3, image: "hellooooo")
+        
+        // don't have to write a bunch of overridden functions when using protocol
+        sayHello(blah: b)
+
+        
+        
         // classes: reference data types
         // structs: value data types (get new object when you pass something)
         
         // when Boss class is changed to a struct, changing the health of selected boss doesn't change the health of b
         // when putting object into array, a NEW object is created, NOT a new reference (brand new box, not just pointing)
-        
-        
-        
-        
-        
+    
         
         
         
     }
 
+    func sayHello(blah: Death) {
+        //blah.hit() can't do this bc you can only call things in the Death protocol
+        blah.die()
+    }
 
 }
 
